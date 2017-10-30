@@ -11,13 +11,17 @@ gon.watch('dist')
 $('#new').click(function(){
   event.preventDefault();
   $.ajax({
-    url: '/random_swipe/update_text',
+    url: '/random_swipe/testing123',
+    type:'GET',
+    dataType:'JSON',
     error: function (xhr, ajaxOptions, thrownError) {
          alert(xhr.responseText);
      },
 
     success: function(data){
       alert("success")
+      alert(data)
+
     }
   })
 
