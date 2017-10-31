@@ -5,3 +5,5 @@ renewUsers = (count) ->
   $('#rest_name').text(count)
 
 gon.watch('name_', interval: 1000, renewUsers)
+gon.watch('dist',interval:10, dist)
+alert(dist)
