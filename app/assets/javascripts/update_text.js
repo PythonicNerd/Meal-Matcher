@@ -12,12 +12,16 @@ $('#new').click(function(){
   event.preventDefault();
   $.ajax({
     url: '/random_swipe/update_text',
+    dataType: "json",
     error: function (xhr, ajaxOptions, thrownError) {
          alert(xhr.responseText);
      },
 
     success: function(data){
-      alert("success")
+      $('#rest_name').text(data[0])
+      $('#type').text(data[1])
+      $('#pricing').text(data[2])
+      $('#distance').text(data[3])
     }
   })
 

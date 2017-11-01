@@ -70,6 +70,14 @@ class RandomSwipesController < ApplicationController
     @zipcode = Geocoder.coordinates(z)
   end
 
+  def get_data
+
+    data_array = ['hello']
+    respond_to do |format|
+        format.html
+        format.json { render json: data_array }
+    end
+  end
 
   def update_text
     v = return_rest()
@@ -85,6 +93,12 @@ class RandomSwipesController < ApplicationController
     puts @price
     puts @venuetype
     puts @dist
+
+    data_array = [@name_,@price,@venuetype,@dist]
+    respond_to do |format|
+        format.html
+        format.json { render json: data_array }
+    end
   end
 
 
